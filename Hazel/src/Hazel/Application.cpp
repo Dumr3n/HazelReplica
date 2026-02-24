@@ -1,7 +1,7 @@
 #include "Application.h"
 
-#include "Events/ApplicationEvent.h"
-#include "Log.h"
+#include "Hazel\Events/ApplicationEvent.h"
+#include "Hazel\Log.h"
 
 namespace Hazel {
 

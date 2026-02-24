@@ -1,4 +1,4 @@
-#include "Log.h"
+#include "Hazel\Log.h"
 
 
 namespace Hazel {
