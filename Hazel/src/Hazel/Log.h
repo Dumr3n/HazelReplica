@@ -18,10 +18,6 @@
 #define HZ_FATAL(...)        ::Hazel::Log::GetClientLogger()->fatal(__VA_ARGS__)
 
 
-
-#include <memory>
-
-
 #include "Hazel\Core.h"
 #include "spdlog/spdlog.h"
 #include "spdlog/sinks/stdout_sinks.h"

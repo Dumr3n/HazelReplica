@@ -42,12 +42,18 @@
     <ClInclude Include="src\Hazel\Events\MouseEvent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\hzpch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hazel\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Hazel\Log.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hzpch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
