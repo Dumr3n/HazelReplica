@@ -3,6 +3,7 @@
     <Platform Name="x64" />
   </Configurations>
   <Project Path="Hazel/Hazel.vcxproj" Id="df743366-11fa-45a4-a332-0013d1a712d0" />
+  <Project Path="Hazel/vendor/GLFW/build/ALL_BUILD.vcxproj" Id="238dbcac-85e1-3fb4-b496-fced4f284dd5" />
   <Project Path="Sandbox/Sandbox.vcxproj" Id="a18d277b-90c8-4048-aa04-ee1929316c80">
     <BuildDependency Project="Hazel/Hazel.vcxproj" />
   </Project>
