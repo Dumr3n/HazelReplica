@@ -1,5 +1,5 @@
 #include <Hazel.h>
-
+#include <iostream>
 class Sandbox : public Hazel::Application
 {
 public:
@@ -16,5 +16,6 @@ public:
 
 Hazel::Application* Hazel::CreateApplication()
 {
+	std::cout << "Entry point is here!\n";
 	return new Sandbox();
 }
