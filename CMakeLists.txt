@@ -19,3 +19,5 @@ add_subdirectory(Hazel/vendor/GLFW)
 add_subdirectory(Hazel/vendor/Glad)
 add_subdirectory(Hazel)
 add_subdirectory(Sandbox)
+
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT Sandbox)
