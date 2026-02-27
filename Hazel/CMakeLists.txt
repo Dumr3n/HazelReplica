@@ -17,6 +17,7 @@ target_include_directories(Hazel PUBLIC
     vendor/spdlog/include
     vendor/GLFW/include
     vendor/Glad/include
+    vendor/imgui/include
 )
 
 target_link_libraries(Hazel PRIVATE
