@@ -1,0 +1,48 @@
+cmake_minimum_required(VERSION 3.20)
+project(Hazel)
+
+file(GLOB_RECURSE HAZEL_SOURCES
+    "src/*.cpp"
+    "src/*.h"
+)
+
+source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}/src" PREFIX "src" FILES ${HAZEL_SOURCES})
+
+add_library(Hazel SHARED ${HAZEL_SOURCES})
+
+target_precompile_headers(Hazel PRIVATE src/hzpch.h)
+
+target_include_directories(Hazel PUBLIC
+    src
+    vendor/spdlog/include
+    vendor/GLFW/include
+    vendor/Glad/include
+)
+
+target_link_libraries(Hazel PRIVATE
+    glfw
+    Glad
+    opengl32
+)
+
+target_compile_definitions(Hazel PRIVATE
+    HZ_PLATFORM_WINDOWS
+    HZ_BUILD_DLL
+    GLFW_INCLUDE_NONE
+    $<$<CONFIG:Debug>:HZ_DEBUG>
+    $<$<CONFIG:Release>:HZ_RELEASE>
+    $<$<CONFIG:Dist>:HZ_DIST>
+)
+
+set_target_properties(Hazel PROPERTIES
+    MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/bin/$<CONFIG>-windows-x64/Hazel"
+)
+
+add_custom_command(TARGET Hazel POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E make_directory
+        "${CMAKE_SOURCE_DIR}/bin/$<CONFIG>-windows-x64/Sandbox"
+    COMMAND ${CMAKE_COMMAND} -E copy
+        $<TARGET_FILE:Hazel>
+        "${CMAKE_SOURCE_DIR}/bin/$<CONFIG>-windows-x64/Sandbox/$<TARGET_FILE_NAME:Hazel>"
+)
