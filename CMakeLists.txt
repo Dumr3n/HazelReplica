@@ -17,6 +17,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/bin/$<CONFIG>-windows-x6
 
 add_subdirectory(Hazel/vendor/GLFW)
 add_subdirectory(Hazel/vendor/Glad)
+add_subdirectory(Hazel/vendor/imgui)
 add_subdirectory(Hazel)
 add_subdirectory(Sandbox)
 
