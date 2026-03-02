@@ -26,6 +26,7 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
+		PushOverlay(new Hazel::ImGuiLayer());
 	}
 
 	~Sandbox()
@@ -36,6 +37,5 @@ public:
 
 Hazel::Application* Hazel::CreateApplication()
 {
-	std::cout << "Entry point is here!\n";
 	return new Sandbox();
 }

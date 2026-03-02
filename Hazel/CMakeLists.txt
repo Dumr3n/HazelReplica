@@ -12,17 +12,22 @@ add_library(Hazel SHARED ${HAZEL_SOURCES})
 
 target_precompile_headers(Hazel PRIVATE src/hzpch.h)
 
+target_link_directories(Hazel PRIVATE
+    "${CMAKE_SOURCE_DIR}/bin/$<CONFIG>-windows-x64/ImGui"
+)
+
 target_include_directories(Hazel PUBLIC
     src
     vendor/spdlog/include
     vendor/GLFW/include
     vendor/Glad/include
-    vendor/imgui/include
+    vendor/imgui
 )
 
 target_link_libraries(Hazel PRIVATE
     glfw
     Glad
+    ImGui
     opengl32
 )
 
