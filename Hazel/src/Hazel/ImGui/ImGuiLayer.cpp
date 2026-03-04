@@ -28,6 +28,8 @@ namespace Hazel {
 		io.BackendFlags |= ImGuiBackendFlags_HasMouseCursors;
 		io.BackendFlags |= ImGuiBackendFlags_HasSetMousePos;
 
+		io.KeyMap[ImGuiKey_Backspace] = GLFW_KEY_BACKSPACE;
+
 		ImGui_ImplOpenGL3_Init("#version 410");
 	}
 
