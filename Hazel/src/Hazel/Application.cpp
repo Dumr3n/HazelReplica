@@ -63,7 +63,7 @@ namespace Hazel {
 
 			auto [x, y] = Input::GetMousePosition();
 
-			HZ_CORE_TRACE("{0}, {1}",x ,y);
+			HZ_CORE_TRACE("{0}, {1}",x ,y);			
 			
 			m_Window->OnUpdate();
 		}
