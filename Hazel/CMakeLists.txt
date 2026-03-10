@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.20)
 project(Hazel)
 
-file(GLOB_RECURSE HAZEL_SOURCES
+file(GLOB_RECURSE HAZEL_SOURCES CONFIGURE_DEPENDS
     "src/*.cpp"
     "src/*.h"
 )
@@ -31,8 +31,11 @@ target_link_libraries(Hazel PRIVATE
     opengl32
 )
 
-target_compile_definitions(Hazel PRIVATE
+target_compile_definitions(Hazel PUBLIC
     HZ_PLATFORM_WINDOWS
+)
+
+target_compile_definitions(Hazel PRIVATE
     HZ_BUILD_DLL
     GLFW_INCLUDE_NONE
     $<$<CONFIG:Debug>:HZ_DEBUG>

@@ -21,6 +21,11 @@ namespace Hazel {
 		return new WindowsWindow(props);
 	}
 
+	void* WindowsWindow::GetNativeWindow() const
+	{
+		return static_cast<void*>(m_Window);
+	}
+
 	WindowsWindow::WindowsWindow(const WindowProps& props)
 	{
 		Init(props);

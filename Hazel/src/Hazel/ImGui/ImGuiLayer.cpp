@@ -43,7 +43,7 @@ namespace Hazel {
 	void ImGuiLayer::OnUpdate()
 	{
 		ImGuiIO& io = ImGui::GetIO();
-		Application& app = Application::GetApplication();
+		Application& app = Application::Get();
 		io.DisplaySize = ImVec2(app.GetWindow().GetWidth(), app.GetWindow().GetHeight());
 		
 		float time = (float)glfwGetTime();
