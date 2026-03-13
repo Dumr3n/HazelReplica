@@ -3,7 +3,7 @@ project(Hazel)
 
 file(GLOB_RECURSE HAZEL_SOURCES CONFIGURE_DEPENDS
     "src/*.cpp"
-    "src/*.h"
+    "src/*.h"    
 )
 
 source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}/src" PREFIX "src" FILES ${HAZEL_SOURCES})
@@ -22,6 +22,7 @@ target_include_directories(Hazel PUBLIC
     vendor/GLFW/include
     vendor/Glad/include
     vendor/imgui
+    vendor/glm
 )
 
 target_link_libraries(Hazel PRIVATE
