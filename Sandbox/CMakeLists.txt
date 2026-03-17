@@ -19,6 +19,7 @@ target_link_libraries(Sandbox PRIVATE Hazel)
 
 target_compile_definitions(Sandbox PRIVATE
     HZ_PLATFORM_WINDOWS
+    "IMGUI_API=__declspec(dllimport)"
     $<$<CONFIG:Debug>:HZ_DEBUG>
     $<$<CONFIG:Release>:HZ_RELEASE>
     $<$<CONFIG:Dist>:HZ_DIST>
