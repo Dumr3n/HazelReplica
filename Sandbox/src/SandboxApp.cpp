@@ -11,7 +11,7 @@ public:
 
 	void OnUpdate() override
 	{
-		HZ_INFO("ExampleLayer::Update");
+		//HZ_INFO("ExampleLayer::Update");
 
 		if (Hazel::Input::IsKeyPressed(HZ_KEY_TAB))
 			HZ_INFO("Tab key is pressed!");
