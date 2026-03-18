@@ -12,6 +12,8 @@
 #include <unordered_set>
 #include <unordered_map>
 
+#include "Hazel/Log.h"
+
 #ifdef HZ_PLATFORM_WINDOWS
 	#define WIN32_LEAN_AND_MEAN
 	#define NOMINMAX
