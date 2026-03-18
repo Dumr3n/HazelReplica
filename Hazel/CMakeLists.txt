@@ -8,7 +8,7 @@ file(GLOB_RECURSE HAZEL_SOURCES CONFIGURE_DEPENDS
 
 source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}/src" PREFIX "src" FILES ${HAZEL_SOURCES})
 
-add_library(Hazel SHARED ${HAZEL_SOURCES})
+add_library(Hazel STATIC ${HAZEL_SOURCES})
 
 target_precompile_headers(Hazel PRIVATE src/hzpch.h)
 
@@ -45,14 +45,6 @@ target_compile_definitions(Hazel PRIVATE
 )
 
 set_target_properties(Hazel PROPERTIES
-    MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
+    MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>"
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/bin/$<CONFIG>-windows-x64/Hazel"
-)
-
-add_custom_command(TARGET Hazel POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E make_directory
-        "${CMAKE_SOURCE_DIR}/bin/$<CONFIG>-windows-x64/Sandbox"
-    COMMAND ${CMAKE_COMMAND} -E copy
-        $<TARGET_FILE:Hazel>
-        "${CMAKE_SOURCE_DIR}/bin/$<CONFIG>-windows-x64/Sandbox/$<TARGET_FILE_NAME:Hazel>"
 )
