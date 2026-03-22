@@ -38,6 +38,7 @@ target_compile_definitions(Hazel PUBLIC
 
 target_compile_definitions(Hazel PRIVATE
     HZ_BUILD_DLL
+    HZ_ENABLE_ASSERTS
     GLFW_INCLUDE_NONE
     $<$<CONFIG:Debug>:HZ_DEBUG>
     $<$<CONFIG:Release>:HZ_RELEASE>
