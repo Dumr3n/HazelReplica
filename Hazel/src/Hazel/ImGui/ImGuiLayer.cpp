@@ -4,10 +4,6 @@
 
 #include "backends/imgui_impl_glfw.cpp"
 #include "backends/imgui_impl_opengl3.cpp"
- 
-//TEMP
-//#include <GLFW/glfw3.h>
-//#include <glad/glad.h>
 
 namespace Hazel {
 
