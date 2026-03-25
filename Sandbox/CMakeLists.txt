@@ -12,14 +12,13 @@ add_executable(Sandbox ${SANDBOX_SOURCES})
 
 target_include_directories(Sandbox PRIVATE
     ../Hazel/src
-    ../Hazel/vendor/spdlog/include
+    ../Hazel/vendor/spdlog/include    
 )
 
 target_link_libraries(Sandbox PRIVATE Hazel)
 
 target_compile_definitions(Sandbox PRIVATE
     HZ_PLATFORM_WINDOWS
-    "IMGUI_API=__declspec(dllimport)"
     $<$<CONFIG:Debug>:HZ_DEBUG>
     $<$<CONFIG:Release>:HZ_RELEASE>
     $<$<CONFIG:Dist>:HZ_DIST>

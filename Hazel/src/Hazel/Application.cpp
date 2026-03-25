@@ -26,8 +26,8 @@ namespace Hazel {
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
 		m_Window->SetVSync(false);
 		
-		//m_ImGuiLayer = new ImGuiLayer();
-		//PushOverlay(m_ImGuiLayer);
+		m_ImGuiLayer = new ImGuiLayer();
+		PushOverlay(m_ImGuiLayer);
 	}
 
 	Application::~Application()
@@ -72,14 +72,13 @@ namespace Hazel {
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate(timestep);
 
-			//m_ImGuiLayer->Begin();
+			m_ImGuiLayer->Begin();
 
-			//for (Layer* layer : m_LayerStack)
-			//	layer->OnImGuiRender();
+			for (Layer* layer : m_LayerStack)
+				layer->OnImGuiRender();
 
-			//m_ImGuiLayer->End();
-			//
-			
+			m_ImGuiLayer->End();
+
 			m_Window->OnUpdate();
 		}
 	}
