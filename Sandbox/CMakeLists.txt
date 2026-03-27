@@ -29,3 +29,7 @@ set_target_properties(Sandbox PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/bin/$<CONFIG>-windows-x64/Sandbox"
     VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/bin/$<CONFIG>-windows-x64/Sandbox"
 )
+
+target_compile_definitions(Sandbox PRIVATE
+    ASSET_PATH="${CMAKE_SOURCE_DIR}/Sandbox/assets"
+)

@@ -3,10 +3,12 @@ project(Hazel)
 
 file(GLOB_RECURSE HAZEL_SOURCES CONFIGURE_DEPENDS
     "src/*.cpp"
-    "src/*.h"    
+    "src/*.h"
+    "vendor/stb_image/*.h"
+    "vendor/stb_image/*.cpp"
 )
 
-source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}/src" PREFIX "src" FILES ${HAZEL_SOURCES})
+source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}" FILES ${HAZEL_SOURCES})
 
 add_library(Hazel STATIC ${HAZEL_SOURCES})
 
@@ -23,6 +25,7 @@ target_include_directories(Hazel PUBLIC
     vendor/Glad/include
     vendor/imgui
     vendor/glm
+    vendor/stb_image
 )
 
 target_link_libraries(Hazel PRIVATE
