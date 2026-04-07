@@ -37,7 +37,7 @@ namespace Hazel {
 	class HAZEL_API Event
 	{
 	public:
-		bool Handled = true;
+		bool Handled = false;
 
 		virtual EventType GetEventType() const = 0;
 		virtual const char* GetName() const = 0;
