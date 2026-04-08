@@ -15,8 +15,12 @@ namespace Hazel {
 
 		void OnUpdate(Timestep ts);
 		void OnEvent(Event& e);
+
 		OrthographicCamera& GetCamera() { return m_Camera; };
 		const OrthographicCamera& GetCamera() const { return m_Camera; };
+
+		float GetZoomLevel() { return m_ZoomLevel; }
+		void SetZoomLevel(float level) { m_ZoomLevel = level; }
 	private:
 		bool OnMouseScrolled(MouseScrolledEvent& e);
 		bool OnWindowResized(WindowResizeEvent& e);
