@@ -52,3 +52,8 @@ set_target_properties(Hazel PROPERTIES
     MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>"
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/bin/$<CONFIG>-windows-x64/Hazel"
 )
+
+
+target_compile_definitions(Hazel PRIVATE
+    ASSET_PATH="${CMAKE_SOURCE_DIR}/Sandbox/assets"
+)
