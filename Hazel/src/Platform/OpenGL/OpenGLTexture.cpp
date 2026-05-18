@@ -85,6 +85,6 @@ namespace Hazel {
 	void OpenGLTexture2D::Bind(uint32_t slot) const
 	{
 		HZ_PROFILE_FUNCTION();
-		glBindTextureUnit(0, m_RendererID);
+		glBindTextureUnit(slot, m_RendererID);
 	}
 }
